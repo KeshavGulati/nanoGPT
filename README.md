@@ -27,8 +27,7 @@ The main contents of the project are in [main.ipynb](https://github.com/KeshavGu
 
 ## The Setup
 ### Word Embeddings
-To start, we need some representation of the data in a space that is learnable. So, we use a regular lookup table with learnable parameters, and assign each data point an ID. In this case, a datapoint is a character, and the ID is its index in the vocabulary. The lookup table has dimensions 
-$\text{VOCAB\_SIZE} \times \text{EMB\_SIZE}$.
+To start, we need some representation of the data in a space that is learnable. So, we use a regular lookup table with learnable parameters, and assign each data point an ID. In this case, a datapoint is a character, and the ID is its index in the vocabulary. The lookup table has dimensions VOCAB_SIZE $\times$ EMB_SIZE.
 ```python
 # For individual characters
 stoi = {s: i for i, s in enumerate(vocab)}
@@ -49,7 +48,7 @@ Hello, World!
 ```
 
 ### Positional Embeddings
-In order for the model to be able to understand the relationship between the characters with respect to their position, we use another lookup table with learnable parameters. The dimensions of the table are $\text{MAX\_CONTEXT\_LENGTH} \times \text{EMB\_SIZE}$.
+In order for the model to be able to understand the relationship between the characters with respect to their position, we use another lookup table with learnable parameters. The dimensions of the table are MAX_CONTEXT_LENGTH $\times$ EMB_SIZE.
 
 ### Time Dimension
 The time dimension in transformers refers to the context length we look at for each character. This helps in randomizing the training, but still maintaining some important patterns found in the data.
